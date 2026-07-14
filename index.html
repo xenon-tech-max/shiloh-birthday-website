@@ -322,30 +322,29 @@ function playMusic(){
 }
 
 
-// Countdown to next birthday
-let birthday = new Date("April 11, 2027 00:00:00").getTime();
-
+// Time together since April 11, 2025
+let startDate = new Date("April 11, 2025 00:00:00").getTime();
 
 setInterval(function(){
 
 let now = new Date().getTime();
 
-let distance = birthday-now;
+let distance = now - startDate;
 
 
-let days=Math.floor(distance/(1000*60*60*24));
-let hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-let minutes=Math.floor((distance%(1000*60*60))/(1000*60));
-let seconds=Math.floor((distance%(1000*60))/1000);
+let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
 
-document.getElementById("days").innerHTML=days;
-document.getElementById("hours").innerHTML=hours;
-document.getElementById("minutes").innerHTML=minutes;
-document.getElementById("seconds").innerHTML=seconds;
+document.getElementById("days").innerHTML = days;
+document.getElementById("hours").innerHTML = hours;
+document.getElementById("minutes").innerHTML = minutes;
+document.getElementById("seconds").innerHTML = seconds;
 
 
-},1000);
+}, 1000);
 
 
 
